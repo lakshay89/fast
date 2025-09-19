@@ -89,6 +89,24 @@ Electronic">
 		href="https://ihmcl.co.in/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fihmcl.co.in%2Ffastag-user%2F&format=xml">
 	<meta name="generator" content="Site Kit by Google 1.161.0">
 	<style type="text/css" id="css-fb-visibility">
+
+		.slider-container {
+			width: 100%;
+			overflow: hidden;
+			background: linear-gradient(to right, #007bff, #00ffcc); /* blue to cyan line */
+			padding: 0px 0;
+			}
+
+			.slider-text {
+			display: inline-block;
+			white-space: nowrap;
+			padding-left: 100%; /* start from right */
+			animation: slide-left 10s linear infinite;
+			font-weight: bold;
+			font-size: 16px;
+			color:white;
+			}
+
 		@media screen and (max-width: 850px) {
 			.fusion-no-small-visibility {
 				display: none !important;
@@ -143,6 +161,17 @@ Electronic">
 			}
 		}
 
+		@media screen and (max-width: 601px)  {
+				.pass-form{
+					margin-left:30px;
+				}
+				.fusion-footer footer .fusion-row .fusion-columns {
+					display: none;
+				}
+				.marg{
+					margin-bottom:50px;
+				}
+		}
 		@media screen and (min-width: 851px) and (max-width: 1024px) {
 			.fusion-no-medium-visibility {
 				display: none !important;
@@ -348,7 +377,10 @@ Electronic">
 				<div class="fusion-clearfix"></div>
 			</header>
 
-			
+			<div class="slider-container" style="display:flex;">
+					<p class="slider-text">Book your Annual Fasttag pass only Rs 3000/</p>
+			</div>
+
 
 			
 
@@ -385,7 +417,7 @@ Electronic">
 													<h2 class="fusion-title-heading title-heading-left"
 														style="font-size:40px" plus="" jakarta=""
 														sans"; "="">
-														Register for Annual Pass</h2><span class="awb-title-spacer"></span>
+														Register for Monthly Pass</h2><span class="awb-title-spacer"></span>
 													<div class="title-sep-container title-sep-container-right">
 														<div class="title-sep sep- sep-solid"
 															style="border-color:#e0dede;"></div>
@@ -426,7 +458,7 @@ Electronic">
 														style="--awb-bg-size:cover;--awb-width-large:100%;--awb-margin-top-large:0px;--awb-spacing-right-large:0px;--awb-margin-bottom-large:0px;--awb-spacing-left-large:1.92%;--awb-width-medium:100%;--awb-order-medium:0;--awb-spacing-right-medium:0px;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-order-small:0;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;">
 														<div
 															class="fusion-column-wrapper fusion-column-has-shadow fusion-flex-justify-content-flex-start fusion-content-layout-column">
-															<div><a class="fusion-button button-flat fusion-button-default-size button-custom fusion-button-default button-2 fusion-button-default-span fusion-button-default-type fusion-menu"
+															<div class="marg"><a class="fusion-button button-flat fusion-button-default-size button-custom fusion-button-default button-2 fusion-button-default-span fusion-button-default-type fusion-menu"
 																	style="--button_accent_color:#ffffff;--button_border_color:#ffffff;--button_accent_hover_color:#ffffff;--button_border_hover_color:#ffffff;--button_gradient_top_color:#ff704d;--button_gradient_bottom_color:#ff704d;--button_gradient_top_color_hover:#947fe8;--button_gradient_bottom_color_hover:#947fe8;--button_text_transform:capitalize;--button_font_size:18px;--button_line_height:1;--button_padding-top:20px;--button_padding-right:40px;--button_padding-bottom:23px;--button_padding-left:40px;--button_typography-letter-spacing:-0.015em;--button_typography-font-family:"
 																	plus="" jakarta=""
 																	sans";--button_typography-font-style:normal;--button_typography-font-weight:500;"=""
@@ -447,37 +479,22 @@ Electronic">
                                                     <!-- HTML -->
 <div class="pass-form-container">
  
-  <form class="pass-form" autocomplete="off">
-    <h2>Register for Annual Pass</h2>
-    <!-- <label for="search_by">Search by</label> -->
-       <select name="search_by" required title="Search by">
-            <option style="color:black;" value="" disabled selected>Search by</option>
-            <option value="vehicle_reg_no" style="color:black;">Vehicle registered no.</option>
-            <option value="fasttag_id" style="color:black;">FASTTag ID</option>
-        </select>
+ <form class="pass-form" autocomplete="off" onsubmit="event.preventDefault(); window.location.href='./payment.html';">
+  <h2>Register for Monthly Pass</h2>
 
- <!-- <label for="vehicle_id">Vehicle Number/Fastag ID *</label> -->
-<input
-      type="tel"
-      name="Vehicle Number/Fastag ID *"
-      placeholder="Vehicle Number/Fastag ID *"
-      required
-      pattern="^[0-9]$"
-      title="Enter a valid 10-digit phone number."
-    />
-     <!-- <label for="phone_no">Phone no.</label> -->
-  <input
-      type="tel"
-      name="Phone no."
-      placeholder="Phone no."
-      required
-      pattern="^[0-9]{10}$"
-      maxlength="10"
-      title="Enter a valid 10-digit phone number."
-    />
-    
-    <button type="submit" class="submit-btn">Submit</button>
-  </form>
+  <select name="search_by" required>
+    <option value="" disabled selected>Search by</option>
+    <option value="vehicle_reg_no">Vehicle registered no.</option>
+    <option value="fasttag_id">FASTTag ID</option>
+  </select>
+
+  <input type="text" name="vehicle_id" placeholder="Vehicle Number/Fastag ID *" required />
+
+  <input type="tel" name="phone_no" placeholder="Phone no." required pattern="^[0-9]{10}$" maxlength="10" />
+
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+
 </div>
 
 
